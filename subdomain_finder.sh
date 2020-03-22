@@ -33,7 +33,7 @@ else
  cat sub.txt
 
  echo "Enumerating from certspotter...."
- curl -s https://certspotter.com/api/v0/certs?domain=google.com | grep  -o '\[\".*\"\]' | cut -d '"' -f2 >> sub.txt
+ curl -s https://certspotter.com/api/v0/certs?domain=$1 | grep  -o '\[\".*\"\]' | cut -d '"' -f2 >> sub.txt
  echo -e "\033[0;31mSubdomains Found:\033[0m"
  cat sub.txt
 
